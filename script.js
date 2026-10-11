@@ -117,3 +117,34 @@ if (musicToggle) {
 }
 
 const ytApiScript=document.createElement("script");ytApiScript.src="https://www.youtube.com/iframe_api";document.head.appendChild(ytApiScript);
+
+
+// Música ambiente
+const musicButton = document.getElementById("musicButton");
+const musicText = document.getElementById("musicText");
+const youtubePlayer = document.getElementById("youtubePlayer");
+
+let musicPlaying = false;
+
+if (musicButton && youtubePlayer) {
+    musicButton.addEventListener("click", () => {
+        const command = musicPlaying ? "pauseVideo" : "playVideo";
+
+        youtubePlayer.contentWindow.postMessage(
+            JSON.stringify({
+                event: "command",
+                func: command,
+                args: []
+            }),
+            "*"
+        );
+
+        musicPlaying = !musicPlaying;
+
+        musicText.textContent = musicPlaying
+            ? "Pausar música"
+            : "Música ambiente";
+
+        musicButton.classList.toggle("playing", musicPlaying);
+    });
+}
