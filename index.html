@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+  <body>
   <div class="grain" aria-hidden="true"></div>
   <header class="nav">
     <a class="brand" href="#inicio" aria-label="Almas Gêmeas — início">
@@ -186,5 +186,23 @@
   </main>
   <footer><span>ALMAS GÊMEAS</span><span>JORGE & ARIELA · 28 ANOS</span><span>2026</span></footer>
   <script src="script.js"></script>
+<!-- Música ambiente -->
+<div class="music-player">
+    <button id="musicButton" aria-label="Tocar música ambiente">
+        🎵 <span id="musicText">Música ambiente</span>
+    </button>
+
+    <iframe
+        id="youtubePlayer"
+        width="1"
+        height="1"
+        src="https://www.youtube.com/embed/ng2Ua9bk1Pg?enablejsapi=1&rel=0"
+        title="Música ambiente"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        style="position:absolute; opacity:0; pointer-events:none;">
+    </iframe>
+</div>
+    
 </body>
 </html>
